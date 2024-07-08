@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+
+  server:
+    container_name: server
+    image: node:20.15
+    working_dir: /app
+    volumes:
+      - .:/app
+    tty: true
+    ports:
+      - 3000:3000
+    environment:
+      - DATABASE_URL=postgres://${DB_USERNAME}:${DB_PASSWORD}@database:5432/${DB_DATABASE}
+    depends_on:
+      - database
+    command: sh -c "(curl -sL https://netfree.link/dl/unix-ca.sh | sh ) && npm install && npm run start --host 0.0.0.0"
+    
+  database:
+    container_name: database
+    image: postgres:16.2
+    environment:
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - 5432:5432
