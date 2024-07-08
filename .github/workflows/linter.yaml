@@ -18,7 +18,7 @@ jobs:
           node-version: 14
 
       - name: Install dependencies
-        run: npm install eslint
+        run: npm install eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
 
       - name: Run Linter
         run:  npm run lint
