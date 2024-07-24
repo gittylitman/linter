@@ -1,8 +1,8 @@
-# atuda-app-server
+# atuda-app-client
 
 ## 🚀 Overview
 
-This project is the server part of the Full Stack application that allows reserves to submit requests
+This project is the client part of the Full Stack application that allows reserves to submit requests
 
 ## 💻 Technologies Used
 
@@ -15,21 +15,13 @@ This project is the server part of the Full Stack application that allows reserv
 
 Please follow these steps to install and configure the project on your local machine:
 
-1. Create .env file in root folder:
+1. Run devcontainer
+
+2. Install dependencies and run
 
 ```bash
-DB_CONNECTION=pgsql
-DB_HOST=database
-DB_PORT=5432
-DB_DATABASE=database
-DB_USERNAME=
-DB_PASSWORD=
-```
-
-2. Run docker-compose:
-
-```bash
-docker-compose up
+npm install
+npm run dev
 ```   
 
-Your server will be accessible at http://localhost:3000.
+Your app will be accessible at http://localhost:8080.
