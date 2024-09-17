@@ -6,11 +6,11 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "jest --passWithNoTests",
-    "format": "prettier --write \"**/*.{vue,ts}\""
+    "format": "prettier --write \"**/*.{vue,ts}\" ",
+    "format:check":"prettier \"**/*.{vue,ts}\" --check"
   },
   "dependencies": {
     "@mdi/font": "^6.2.95",
-    "@vue/cli-plugin-unit-jest": "^5.0.8",
     "roboto-fontface": "*",
     "vue": "^3.4.21"
   },
